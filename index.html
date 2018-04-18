@@ -5,91 +5,50 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="" id="test">
-<!--         <div class="form_group">
-            <div class="from_label">必填：</div>
-            <input data-validate="required is:password" data-name="姓名" type="text">
-        </div>
-        <div class="form_group">
-            <div class="from_label">最小长度5：</div>
-            <input data-validate="minLength:5" data-name="密码" type="text">
-        </div>
-        <div class="form_group">
-            <div class="from_label">固定长度：</div>
-            <input data-validate="length:3" data-name="手机号" type="text">
-        </div>
-        <div class="form_group">
-            <div class="from_label">值为数字：</div>
-            <input data-validate="is:num" data-name="ID卡" type="text">
-        </div> -->
-        <div class="form_group">
-            <div class="from_label">自定义：</div>
-            <!-- <input data-validate="test:123" data-name="ID卡" type="text"> -->
-        </div>
-        <div class="form_group">
-            <div class="from_label">勾选：</div>
-            <input  data-validate="checked" data-name="ID卡" type="checkbox">
-        </div>
-        
-        <button type="submit">提交</button>
-    </form>
-    <form action="" id="test2">
-        
-        <div class="form_group">
-            <div class="from_label">自定义：</div>
-            <!-- <input data-validate="test:123" data-name="ID卡" type="text"> -->
-        </div>
-        <div class="form_group">
-            <div class="from_label">勾选：</div>
-            <input  data-validate="checked" data-name="ID卡" type="checkbox">
-        </div>
-       
-        <button type="submit">提交</button>
-    </form>
+<h2>表单1</h2>
+<form action="" id="testForm">
+    <div class="form_group">
+        <div class="from_label">必填：</div>
+        <input data-validate="required minLength:4" name="userName" data-name="姓名" type="text">
+    </div>
+    <!--<div class="form_group">-->
+        <!--<div class="from_label">最小长度5：</div>-->
+        <!--<input data-validate="minLength:5" name="password" data-name="密码" type="text">-->
+    <!--</div>-->
+    <!--<div class="form_group">-->
+    <!--<div class="from_label">固定长度：</div>-->
+    <!--<input data-validate="length:3" data-name="手机号" type="text">-->
+    <!--</div>-->
+    <!--<div class="form_group">-->
+    <!--<div class="from_label">值为数字：</div>-->
+    <!--<input data-validate="is:num" data-name="ID卡" type="text">-->
+    <!--</div>-->
+    <!--<div class="form_group">-->
+    <!--<div class="from_label">自定义：</div>-->
+    <!--<input data-validate="test:123" data-name="ID卡" type="text">-->
+    <!--</div>-->
+    <!--<div class="form_group">-->
+    <!--<div class="from_label">勾选：</div>-->
+    <!--<input data-validate="checked" data-name="ID卡" type="checkbox">-->
+    <!--</div>-->
 
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./formValidate.js"></script>
-    <script>
-        
-        // 添加验证机制
-        // $("#test").formValidate({
-        //     // rules: {
-        //     //     test: [function (val, param) {
-        //     //         return true;
-        //     //         // return false;
-        //     //     }, function (el) {
-        //     //         alert("ID卡错误校验");
-        //     //     }],
-        //     //     minLength: [null, function(el, param){
-        //     //         alert("最小长度" + param)
-        //     //     }],
-        //     // },
-        //     // continuable: false,
-        //     showError: function(msg){
-        //         alert(msg);
-        //     }
-        // });
-        $("#test2").formValidate({
-            // rules: {
-            //     test: [function (val, param) {
-            //         return false;
-            //     }, function (el) {
-            //         alert("xxx");
-            //     }],
-            // },
-            continuable: false,
-            showError: function(msg){
-                alert(msg);
-            },
-            ajax: function(){
-                console.log("ajax send");
-            }
-        });
+    <button type="submit">提交</button>
+</form>
+<!--<h2>表单2</h2>-->
+<!--<form action="" id="test2">-->
+<!---->
+<!--<div class="form_group">-->
+<!--<div class="from_label">自定义：</div>-->
+<!--&lt;!&ndash; <input data-validate="test:123" data-name="ID卡" type="text"> &ndash;&gt;-->
+<!--</div>-->
+<!--<div class="form_group">-->
+<!--<div class="from_label">勾选：</div>-->
+<!--<input  data-validate="checked" data-name="ID卡" type="checkbox">-->
+<!--</div>-->
+<!---->
+<!--<button type="submit">提交</button>-->
+<!--</form>-->
 
-        window.onerror = function(e){
-            alert(e)
-        }
-        
-    </script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+{
+    "name": "form-validator",
+    "version": "2.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "webpack-dev-server --inline --env.dev",
+        "build": "webpack --env.build"
+    },
+    "author": "shymean",
+    "license": "ISC",
+    "devDependencies": {
+        "babel-core": "^6.25.0",
+        "babel-loader": "^7.0.0",
+        "babel-preset-env": "^1.5.2",
+        "extract-text-webpack-plugin": "^2.1.2",
+        "html-webpack-inline-source-plugin": "^0.0.9",
+        "html-webpack-plugin": "^2.28.0",
+        "script-ext-html-webpack-plugin": "^1.8.8",
+        "webpack": "^2.6.1",
+        "webpack-dev-server": "^2.4.5"
+    }
+}

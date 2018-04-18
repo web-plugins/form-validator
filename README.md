@@ -4,6 +4,10 @@
 
 项目需求中经常遇见的就是表单验证，这里参考Laravel的验证方式，实现一个在前端进行的表单验证插件。
 
+## 更新
+* `v2.0.0`重构大部分代码，移除jquery代码，采用原生DOM实现
+* `v1.0.0`整个验证器以jQuery插件形式调用
+
 ## 使用方法
 
 ### 指定规则
@@ -18,15 +22,17 @@
 
 ### 自定义验证规则
 插件内置了一些常用的验证规则，也提供了扩展验证方法的接口
-```javascript
-$("#test").formValidate({
-    rules: {
+
+```js
+let oForm = document.getElementById('testForm')
+let validator = new Validator({
+ 	rules: {
         test: [function (val, param, el) {
             return false;
-        }, function (el) {
+        }, function (msg) {
             alert("ID卡错误校验");
         }],
-        minLength: [null, function(el, param){
+        minLength: [null, function(msg, param){
             alert("最小长度" + param)
         }],
     },
@@ -34,8 +40,12 @@ $("#test").formValidate({
     showError: function(msg){
         alert(msg);
     }
-});
+})
+
+validator.initWithForm(oForm)
 ```
+
+### 构造参数配置
 其中的配置参数包括：
 * `rules`，传入一个对象，用于自定义或覆盖验证规则
     * `key`值表示对应的规则名称，用于在`data-validate`中使用
@@ -50,7 +60,7 @@ $("#test").formValidate({
 * `ajax`，是用于异步提交表单时的验证，该属性是一个函数，当验证通过时会执行该函数（同时取消表单默认提交）
 
 ## TODO
-* [ ] 常规的表单验证需求有:
+* [x] 常规的表单验证需求有:
      * minLength: 最小长度
      * maxLength: 最大长度
      * type： num数字 email邮箱 pwd密码 date日期 tel电话号码 idcard身份证
