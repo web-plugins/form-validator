@@ -36,7 +36,7 @@ let validator = new Validator({
             alert("最小长度" + param)
         }],
     },
-    continuable: false,
+    isContinuous: false,
     showError: function(msg){
         alert(msg);
     }
@@ -53,7 +53,7 @@ validator.initWithForm(oForm)
        * 第一个元素是验证规则，接收第一个参数为对应元素的值，第二个参数是验证规则的参数（自定义的时候一般没有必要设置），第三个参数是校验元素的`jQuery`包装对象，返回值为false或者undefined则表示验证不通过
        * 第二个元素是错误处理，接收第一个参数为对应元素的`jQuery`包装对象，第二个参数是验证时的参数
        * 如果只需要修改错误处理函数，则可以在验证规则使用`null`占位
-* `continuable`，接受一个布尔值:
+* `isContinuous`，接受一个布尔值:
     * 为`true`时会验证所有条目（可显示所有错误）
     * 为`false`时验证到第一条不通过的规则就会返回（可尽快提示错误信息）
 * `showError`，统一的错误处理函数，默认`console.log`，可以传入`alert`，`layer.msg`等处理函数。`showError`实际上会替换当前页面全部表单的错误反馈，
